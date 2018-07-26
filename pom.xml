@@ -26,14 +26,39 @@
 					<groupId>commons-logging</groupId>
 					<artifactId>commons-logging</artifactId>
 				 </exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-beans</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-aop</artifactId>
+				</exclusion>
 			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
-		</dependency>
-				
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-beans</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-aop</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>		
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
@@ -109,35 +134,20 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-	    <dependency>
+		<dependency>
 	        <groupId>io.dropwizard.metrics</groupId>
-	        <artifactId>metrics-core</artifactId>
-	        <version>4.0.0</version>
+	        <artifactId>metrics-jvm</artifactId>
+	        <version>3.1.2</version>
 	    </dependency>
-	    <dependency>
-	        <groupId>io.dropwizard.metrics</groupId>
-	        <artifactId>metrics-servlets</artifactId>
-	        <version>4.0.0</version>
-	    </dependency>
-	    <!-- <dependency>
-		    <groupId>io.micrometer</groupId>
-		    <artifactId>micrometer-core</artifactId>
-		    <version>1.0.5</version>
-		</dependency>  -->
 		<dependency>
 		    <groupId>com.ryantenney.metrics</groupId>
 		    <artifactId>metrics-spring</artifactId>
-		    <version>3.1.3</version>
+		    <version>3.1.2</version>
 		</dependency>
 		<dependency>
-			<groupId>com.vcredit</groupId>
-			<artifactId>framework-log-api</artifactId>
-			<version>0.0.29</version>
-		</dependency>
-		<dependency>
-			<groupId>com.vcredit</groupId>
-			<artifactId>framework-timer-quartz</artifactId>
-			<version>0.0.60</version>
+		    <groupId>metrics_influxdb</groupId>
+		    <artifactId>metrics-influxdb</artifactId>
+		    <version>0.9.4</version>
 		</dependency>
 		<!-- Test -->
 		<dependency>

@@ -14,7 +14,11 @@ public class FooTest {
 
 	@MyMeter("test-service-meter")
 	public void testMeter() {
-
+		try {
+			Thread.sleep(3 * 1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@MyMeter("test2-service-meter")
